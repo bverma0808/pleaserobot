@@ -1,8 +1,8 @@
 'use strict'
-var util = require('util');
+const config = require('./config')
 const Telegram = require('telegram-node-bot')
 const TelegramBaseController = Telegram.TelegramBaseController
-const tg = new Telegram.Telegram('265717744:AAE_RVSb3_ipt6zQiWRSDy6P_DmNhu1HG7Y')
+const tg = new Telegram.Telegram(config.BOT_TOKEN)
 
 class PingController extends TelegramBaseController {
     /**
