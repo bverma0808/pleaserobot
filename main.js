@@ -38,7 +38,10 @@ class DataController extends TelegramBaseController {
         if(payload.message.substring(0,1)=='/'){
           payload.message = payload.message.substring(1);  
         }
-        sendToZap(payload);
+
+        if(shouldSend(payload.message)){
+            sendToZap(payload);
+        }
         messages += `${new Date()}; Received Message:=> ` + scope._update._message._text + '<br>'
         return scope
     }
@@ -64,6 +67,10 @@ function sendToZap(payload){
             console.log("body response from zaphook Server===> " + JSON.stringify(body));
         }
     });
+}
+
+function shouldSend(message){
+    return message.match(/[Pp][lL][SsEezZ]+[Aa]*[sS]*[eE]*/gim) != null
 }
 
 server.get('/getChatUpdates', function (req, res, next) {
