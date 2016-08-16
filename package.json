@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.74.0",
     "restify": "^4.1.1",
     "telegram-node-bot": "^3.0.12"
   },
