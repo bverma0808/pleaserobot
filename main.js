@@ -25,7 +25,7 @@ class DataController extends TelegramBaseController {
 
     before(command, scope) {
         // console.log(`${new Date()}; Received Message:=> `, scope._update._message._text.substring(1));
-        messages += `${new Date()}; Received Message:=> ` + scope._update._message._text.substring(1) + '<br>'
+        messages += `${new Date()}; Received Message:=> ` + scope._update._message._text + '<br>'
         return scope
     }
 }
