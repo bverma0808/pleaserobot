@@ -42,7 +42,7 @@ server.get('/getChatUpdates', function (req, res, next) {
     res.end();
 });
 
-
-server.listen(7070, function () {
+var PORT = process.env.PORT || 5000
+server.listen(PORT, function () {
     console.log('request' ,'%s listening at %s', server.name, server.url);
 });
